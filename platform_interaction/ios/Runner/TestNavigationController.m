@@ -16,6 +16,7 @@
 - (nullable UIViewController *)popViewControllerAnimated:(BOOL)animated {
   FlutterViewController* root = (FlutterViewController*)[self.viewControllers objectAtIndex:0];
 
+  // 回传ping消息
   FlutterBasicMessageChannel* messageChannel =
       [FlutterBasicMessageChannel messageChannelWithName:@"navigation-test"
                                          binaryMessenger:root

@@ -1,0 +1,13 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+
+build/
+pubspec.lock
+.flutter-plugins
+.idea/
+ios/Podfile.lock
+ios/Podfile.lock
+ios/Flutter/Generated.xcconfig

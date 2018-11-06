@@ -15,6 +15,10 @@ const String nothing = '-';
 class TestStepResult {
   const TestStepResult(this.name, this.description, this.status);
 
+  /// 这种用法挺清奇，直接将 包含数据的TestStepResult转换成对应的widget。
+  /// 好处里：代码隔离。
+  /// 问题在于，如果这里的widget需要和上层配合，则不太适用。
+
   factory TestStepResult.fromSnapshot(AsyncSnapshot<TestStepResult> snapshot) {
     switch (snapshot.connectionState) {
       case ConnectionState.none:

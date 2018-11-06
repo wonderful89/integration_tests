@@ -33,7 +33,9 @@ class _TestAppState extends State<TestApp> {
   }
 
   void _executeNextStep() {
+    print('_executeNextStep= $_executeNextStep');
     setState(() {
+      // step [0, 1]
       if (_step < steps.length)
         _result = steps[_step++]();
       else

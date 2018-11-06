@@ -10,7 +10,7 @@ void main() {
     FlutterDriver driver;
 
     setUpAll(() async {
-      driver = await FlutterDriver.connect(printCommunication: true);
+      driver = await FlutterDriver.connect(printCommunication: false);
     });
 
     test('step through', () async {
@@ -19,6 +19,7 @@ void main() {
       int step = 0;
       while (await driver.getText(statusField) == 'ok') {
         await driver.tap(stepButton);
+        print('step = $step');
         step++;
       }
       final String status = await driver.getText(statusField);

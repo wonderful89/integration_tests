@@ -10,4 +10,3 @@ pubspec.lock
 .idea/
 ios/Podfile.lock
 ios/Podfile.lock
-ios/Flutter/Generated.xcconfig
