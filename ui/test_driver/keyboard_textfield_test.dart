@@ -21,13 +21,17 @@ void main() {
       driver?.close();
     });
 
-    test('Textfield scrolls back into view after covered by keyboard', () async {
-      await driver.setTextEntryEmulation(enabled: false); // we want the keyboard to come up
+    test('Textfield scrolls back into view after covered by keyboard',
+        () async {
+      await driver.setTextEntryEmulation(
+          enabled: false); // we want the keyboard to come up
 
       final SerializableFinder listViewFinder = find.byValueKey(keys.kListView);
-      final SerializableFinder textFieldFinder = find.byValueKey(keys.kDefaultTextField);
+      final SerializableFinder textFieldFinder =
+          find.byValueKey(keys.kDefaultTextField);
       final SerializableFinder offsetFinder = find.byValueKey(keys.kOffsetText);
 
+      // 每次滑动-20.0， 直到textFieldFinder 可见
       // Align TextField with bottom edge to ensure it would be covered when keyboard comes up.
       await driver.waitForAbsent(textFieldFinder);
       await driver.scrollUntilVisible(
@@ -37,7 +41,8 @@ void main() {
         dyScroll: -20.0,
       );
       await driver.waitFor(textFieldFinder);
-      final double scrollOffsetWithoutKeyboard = double.parse(await driver.getText(offsetFinder));
+      final double scrollOffsetWithoutKeyboard =
+          double.parse(await driver.getText(offsetFinder));
 
       // Bring up keyboard
       await driver.tap(textFieldFinder);
@@ -45,10 +50,12 @@ void main() {
 
       // Ensure that TextField is visible again
       await driver.waitFor(textFieldFinder);
-      final double scrollOffsetWithKeyboard = double.parse(await driver.getText(offsetFinder));
+      final double scrollOffsetWithKeyboard =
+          double.parse(await driver.getText(offsetFinder));
 
       // Ensure the scroll offset changed appropriately when TextField scrolled back into view.
-      expect(scrollOffsetWithKeyboard, greaterThan(scrollOffsetWithoutKeyboard));
+      expect(
+          scrollOffsetWithKeyboard, greaterThan(scrollOffsetWithoutKeyboard));
     });
   });
 }

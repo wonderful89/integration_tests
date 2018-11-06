@@ -21,3 +21,5 @@ void main() {
     expect(await driver.requestData('status'), 'log: paint debugPaintSize');
   });
 }
+
+/// flutter driver -d XXX  --debug lib/commands_performance_overlay.dart // 也有问题

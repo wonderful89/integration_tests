@@ -50,7 +50,6 @@
 #include "FlutterHeadlessDartRunner.h"
 #include "FlutterMacros.h"
 #include "FlutterNavigationController.h"
-#include "FlutterPlatformViews.h"
 #include "FlutterPlugin.h"
 #include "FlutterPluginAppLifeCycleDelegate.h"
 #include "FlutterTexture.h"

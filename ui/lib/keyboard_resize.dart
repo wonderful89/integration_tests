@@ -42,8 +42,9 @@ class _MyHomePageState extends State<MyHomePage> {
       controller: _controller,
       focusNode: FocusNode(),
     );
-    return Scaffold(
-      body: Stack(
+    return new Scaffold(
+//      resizeToAvoidBottomPadding: false, // 如果设置这里，则不会进行计算键盘的高度
+      body: new Stack(
         fit: StackFit.expand,
         alignment: Alignment.bottomCenter,
         children: <Widget>[
@@ -67,3 +68,13 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+// textField.focusNode.unfocus();会使键盘消失，直接用本节点的textNode。
+
+/// 这里用法比较好，可以根据高度进行里面widget的适配
+// LayoutBuilder(
+//              builder: (BuildContext context, BoxConstraints constraints) {
+//            return Center(
+//                child: Text('${constraints.biggest.height}',
+//                    key: const Key(keys.kHeightText)));
+//          }),

@@ -48,18 +48,24 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Text('$offset',
-            key: const ValueKey<String>(keys.kOffsetText),
+          new Container(
+            padding: new EdgeInsets.only(top: 20.0),
+            child: Text(
+              '$offset',
+              key: const ValueKey<String>(keys.kOffsetText),
+            ),
           ),
-          Expanded(
+          new Expanded(
             child: ListView(
               key: const ValueKey<String>(keys.kListView),
               controller: _controller,
               children: <Widget>[
                 Container(
-                  height: MediaQuery.of(context).size.height,
+                  color: Colors.red,
+//                  width: MediaQuery.of(context).size.width,
+//                  height: MediaQuery.of(context).size.height,
                 ),
-                const TextField(
+                new TextField(
                   key: ValueKey<String>(keys.kDefaultTextField),
                 ),
               ],
@@ -70,3 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+/// 这里其实使用ListView 里面自定义controller， 来实现键盘底部跟随输入的效果。
+/// MediaQuery.of(context).size : 表示当前上下文的size, 而只要是全屏的时候才表示屏幕的size。（排除键盘的）
+/// 中间差了一个offset 那个Container的高度

@@ -25,14 +25,6 @@ FLUTTER_EXPORT
 - (void)handleStatusBarTouches:(UIEvent*)event;
 
 /**
- Registers a callback that will be invoked when the Flutter view has been rendered.
- The callback will be fired only once.
-
- Replaces an existing callback. Use a `nil` callback to unregister the existing one.
- */
-- (void)setFlutterViewDidRenderCallback:(void (^)(void))callback;
-
-/**
  Returns the file name for the given asset.
  The returned file name can be used to access the asset in the application's main bundle.
 
@@ -92,15 +84,6 @@ FLUTTER_EXPORT
  `Info.plist` file.
  */
 @property(strong, nonatomic) UIView* splashScreenView;
-
-/**
- * Controls whether the created view will be opaque or not.
- *
- * Default is `YES`.  Note that setting this to `NO` may negatively impact performance
- * when using hardware acceleration, and toggling this will trigger a re-layout of the
- * view.
- */
-@property(nonatomic, getter=isViewOpaque) BOOL viewOpaque;
 
 @end
 

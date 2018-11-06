@@ -23,3 +23,5 @@ void main() {
         timeout: Duration.zero);
   });
 }
+
+/// flutter driver -d XXX --profile  lib/commands_performance_overlay.dart // 貌似有问题， 没试验成功

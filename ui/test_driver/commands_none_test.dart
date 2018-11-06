@@ -23,3 +23,5 @@ void main() {
         timeout: Duration.zero);
   });
 }
+
+/// flutter driver -d XXX  lib/commands_performance_overlay.dart
