@@ -145,7 +145,6 @@
 				74F9785D215AB9E8005A0F04 /* Sources */,
 				74F9785E215AB9E8005A0F04 /* Frameworks */,
 				74F9785F215AB9E8005A0F04 /* Resources */,
-				53642CAE5328D86A50FDAD59 /* [CP] Embed Pods Frameworks */,
 				74F978A2215ACF9B005A0F04 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -204,24 +203,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		53642CAE5328D86A50FDAD59 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Host/Pods-Host-frameworks.sh",
-				"${PODS_ROOT}/../../hello/.ios/Flutter/engine/Flutter.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Flutter.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Host/Pods-Host-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		74F9787E215ABB1B005A0F04 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

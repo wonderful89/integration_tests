@@ -14,10 +14,16 @@ void second() {
 }
 
 void _run(String name) {
-  ui.window.setIsolateDebugName(name);
+  print('aaa');
+//  ui.window.setIsolateDebugName(name);
+//  ui.window.updateSemantics(update);
   runApp(Center(child: Text(name, textDirection: TextDirection.ltr)));
 }
 
 // `first` and `second` are the actual entrypoints to this app, but dart specs
 // require a main function.
-void main() { }
+void main() {
+  first();
+}
+
+/// ui.Window 中现在没有setIsolateDebugName 这个函数
