@@ -34,11 +34,13 @@ class RenderTest extends RenderProxyBox {
   @override
   void debugPaintSize(PaintingContext context, Offset offset) {
     super.debugPaintSize(context, offset);
+    print('in debugPaintSize');
     log += ' debugPaintSize';
   }
 
   @override
   void paint(PaintingContext context, Offset offset) {
+    print('in paint');
     log += ' paint';
   }
 }
